@@ -107,9 +107,12 @@ class ChatController extends Controller
             ->where('status', 'delivered')
             ->where('sender_id', '!=', Auth::id())
             ->update(['status' => 'seen', 'read_at' => now()]);
-
-        // dd($messages);
+        // dd($message);
+        if (!$messages) {
+            return response()->json(['status' => 'error', 'message' => 'No message found']);
+            // return view('chat.messages', compact('messages'))->render();
+        }
+        $messages = Message::where('conversation_id', $conversation->id)->orderBy('created_at', 'asc')->get();
         return view('chat.messages', compact('messages'))->render();
-        // return response()->json(['status' => 'success', 'message' => 'Message status updated']);
     }
 }
