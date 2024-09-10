@@ -15,6 +15,6 @@ php artisan migrate --seed
 
                                    <<<<<<<=====Branches=====>>>>>>>
 master branch: Contains the core Flingo application with the chat and email functionality.
-flingo/webhooks branch: This branch contains the same setup but includes webhooks for additional functionality.
-Flingo provides a clean Laravel architecture, allowing you to easily extend or customize it as needed. Whether you're chatting with users or managing notifications via webhooks, Flingo offers a great starting point for a WhatsApp-like application.
+flingo/webhooks branch: This branch contains the same setup but includes websockets for additional functionality.
+Flingo provides a clean Laravel architecture, allowing you to easily extend or customize it as needed. Whether you're chatting with users via websockets, Flingo offers a great starting point for a WhatsApp-like application.
 
